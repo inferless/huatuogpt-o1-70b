@@ -1,9 +1,13 @@
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 
+
+
+
+
 class InferlessPythonModel:
     def initialize(self):
         quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-        model_id = "FreedomIntelligence/HuatuoGPT-o1-8B"
+        model_id = "FreedomIntelligence/HuatuoGPT-o1-70B"
         self.model = AutoModelForCausalLM.from_pretrained(
                                                         model_id, 
                                                         quantization_config=quantization_config,
