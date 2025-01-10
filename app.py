@@ -1,4 +1,5 @@
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
+import torch
 
 class InferlessPythonModel:
     def initialize(self):
@@ -9,9 +10,8 @@ class InferlessPythonModel:
         self.model = AutoModelForCausalLM.from_pretrained(
                                                         model_id, 
                                                         quantization_config=quantization_config,
-                                                        device_map="auto",
-                                                        torch_dtype="auto"
-                                                    )
+                                                        device_map="auto"
+                                                        )
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
     def infer(self, inputs):
