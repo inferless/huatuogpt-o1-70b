@@ -16,14 +16,11 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        min_length = int(inputs.get("min_length", 0))
-        max_length = int(inputs.get("max_length", 128))
         temperature = float(inputs.get("temperature", 1.0))
         top_p = float(inputs.get("top_p", 1.0))
         top_k = int(inputs.get("top_k", 50))
         length_penalty = float(inputs.get("length_penalty", 1.0))
         repetition_penalty = float(inputs.get("repetition_penalty", 1.0))
-        stop_strings = inputs.get("stop_strings", None)
         early_stopping = inputs.get("early_stopping", False)
         max_new_tokens = int(inputs.get("max_new_tokens", 128))
         min_new_tokens = int(inputs.get("min_new_tokens", 20))
@@ -40,7 +37,6 @@ class InferlessPythonModel:
                                       top_k=top_k,
                                       length_penalty=length_penalty,
                                       repetition_penalty=repetition_penalty,
-                                      stop_strings=stop_strings,
                                       early_stopping=early_stopping,
                                       max_new_tokens=max_new_tokens,
                                       min_new_tokens=min_new_tokens,
