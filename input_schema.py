@@ -5,18 +5,6 @@ INPUT_SCHEMA = {
         'shape': [1],
         'example': ["How to stop a cough?"]
     },
-    "min_length": {
-        'datatype': 'INT64',
-        'required': False,
-        'shape': [1],
-        'example': [0]
-    },
-    "max_length": {
-        'datatype': 'INT64',
-        'required': False,
-        'shape': [1],
-        'example': [128]
-    },
     "temperature": {
         'datatype': 'FP64',
         'required': False,
