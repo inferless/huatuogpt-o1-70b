@@ -18,7 +18,6 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        system_prompt = inputs.get("system_prompt", None)
         min_length = int(inputs.get("min_length", 0))
         max_length = int(inputs.get("max_length", 128))
         temperature = float(inputs.get("temperature", 1.0))
@@ -33,8 +32,7 @@ class InferlessPythonModel:
         do_sample = inputs.get("do_sample", False)
         num_beams = int(inputs.get("num_beams", 1))
 
-        messages = [{"role": "user", "content": prompt}]
-      
+        messages = [{"role": "user", "content": prompt}]      
         chat_format = self.tokenizer.apply_chat_template(messages, tokenize=False,add_generation_prompt=True)
         inputs = self.tokenizer(chat_format, return_tensors="pt").to(0)
       
