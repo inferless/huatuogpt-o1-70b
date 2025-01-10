@@ -1,9 +1,5 @@
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 
-
-
-
-
 class InferlessPythonModel:
     def initialize(self):
         quantization_config = BitsAndBytesConfig(load_in_8bit=True)
