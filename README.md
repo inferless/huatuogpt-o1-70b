@@ -1,6 +1,5 @@
 # Inferless Template for HuatuoGPT-o1-70B
 
----
 ## Prerequisites
 - **Git**. You would need git installed on your system if you wish to customize the repo after forking.
 - **Python>=3.8**. You would need Python to customize the code in the app.py according to your needs.
