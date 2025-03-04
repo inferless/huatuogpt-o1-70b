@@ -1,12 +1,16 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 import torch
 
 class InferlessPythonModel:
     def initialize(self):
+        model_id = "FreedomIntelligence/HuatuoGPT-o1-70B"
+        snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
         quantization_config = BitsAndBytesConfig(load_in_4bit=True,
                                                  bnb_4bit_compute_dtype=torch.bfloat16
                                                 )
-        model_id = "FreedomIntelligence/HuatuoGPT-o1-70B"
         self.model = AutoModelForCausalLM.from_pretrained(
                                                         model_id, 
                                                         quantization_config=quantization_config,
