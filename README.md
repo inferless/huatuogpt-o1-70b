@@ -2,8 +2,7 @@
 HuatuoGPT‑o1‑70B is a 70 billion‑parameter, LLaMA‑based Chinese medical dialogue model fine‑tuned on clinical Q&A and diagnostic datasets. It’s designed for multi‑turn patient consultations, symptom analysis, prescription suggestions, and triage support in healthcare applications.
 
 ## TL;DR:
-- Deployment of Whisper-large-v3 model using [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper).
-- By using the Faster-Whisper, you can expect an average latency of 0.55 sec.
+- Deployment of HuatuoGPT-o1-70B model using [Transformers](https://github.com/huggingface/transformers).
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.
@@ -22,12 +21,6 @@ This will create a copy of the repository in your own GitHub account, allowing y
 To access the custom runtime window in Inferless, simply navigate to the sidebar and click on the Create new Runtime button. A pop-up will appear.
 
 Next, provide a suitable name for your custom runtime and proceed by uploading the **inferless-runtime-config.yaml** file given above. Finally, ensure you save your changes by clicking on the save button.
-
-### Add Your Hugging Face Access Token
-This model requires a Hugging Face access token for authentication. You can provide the token in the following ways:
-
-- **Via the Platform UI**: Set the `HF_TOKEN` in the **Environment Variables** section.
-- **Via the CLI**: Add the `HF_TOKEN` as an environment variable.
 
 ### Import the Model in Inferless
 Log in to your inferless account, select the workspace you want the model to be imported into and click the `Add a custom model` button.
